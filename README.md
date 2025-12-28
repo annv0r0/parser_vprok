@@ -65,6 +65,18 @@ node api-parser.js https://www.vprok.ru/catalog/7382/pomidory-i-ovoschnye-nabory
 Размер скидки
 ```
 
+#### Note: Почему используется парсинг `__NEXT_DATA__`
+
+> ---
+>
+> Сайт **vprok.ru** построен на **Next.js** и использует **SSR**. При анализе сетевых запросов (**Network → Fetch/XHR**) не обнаружено публичного API для получения списка товаров.
+>
+> Попытки получить HTML страницы напрямую через `axios` приводят к ответу `503` из-за JS-challenge и антибот-защиты.
+>
+> Все данные страницы встроены в HTML в JSON-виде внутри скрипта `__NEXT_DATA__`.
+>
+> ---
+
 ### Linter and formatter:
 
 ```bash
